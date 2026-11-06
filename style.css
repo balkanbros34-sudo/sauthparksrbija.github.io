@@ -1,0 +1,378 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --background: #101a2b;
+    --panel: #192840;
+    --panel-light: #263b57;
+    --text: #f5f7fb;
+    --muted: #aebbd0;
+    --blue: #68d8f4;
+    --yellow: #ffd45c;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at top left,
+        rgba(47, 113, 158, 0.25), transparent 550px),
+        radial-gradient(ellipse at bottom right,
+        rgba(91, 61, 135, 0.18), transparent 450px),
+        var(--background);
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+.header,
+.container {
+    width: min(1050px, calc(100% - 36px));
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 35px 0 28px;
+}
+
+.logo {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    font-size: 34px;
+    background: linear-gradient(145deg, #fff0b3, #ffbd4a);
+    border: 3px solid #fff7df;
+    border-radius: 19px;
+    box-shadow: 0 6px 0 #a55d34;
+    transform: rotate(-4deg);
+}
+
+.eyebrow,
+.section-label {
+    margin: 0 0 5px;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: var(--yellow);
+}
+
+.subtitle {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.sticker {
+    margin-left: auto;
+    padding: 12px 15px;
+    color: #172338;
+    background: var(--yellow);
+    border: 2px solid #fff1b6;
+    border-radius: 9px;
+    box-shadow: 0 5px 0 #9b6e28;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.4;
+    text-align: center;
+    transform: rotate(4deg);
+}
+
+.hero {
+    min-height: 190px;
+    padding: 30px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(110deg, #263f5d, #192b43);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.17);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg, #69d7f2, #ffd45c, #ff866a, #8c9bff
+    );
+}
+
+.hero h2,
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 900;
+}
+
+.hero-content > p:last-child {
+    margin-top: 10px;
+    color: #c6d2e4;
+}
+
+.mountains {
+    width: 190px;
+    height: 120px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.sun {
+    position: absolute;
+    top: 2px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    background: var(--yellow);
+    border: 4px solid #fff0b2;
+    border-radius: 50%;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+}
+
+.mountain-back {
+    right: 0;
+    border-bottom: 95px solid #6e8eaa;
+}
+
+.mountain-front {
+    left: 0;
+    border-bottom: 72px solid #3a607b;
+}
+
+.ranking {
+    margin-top: 35px;
+}
+
+.section-heading {
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+}
+
+.table-container {
+    overflow: hidden;
+    background: rgba(24, 39, 60, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 17px;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background: var(--panel-light);
+}
+
+th {
+    padding: 16px 22px;
+    color: #9eb2cb;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+th:first-child {
+    padding-left: 27px;
+}
+
+td {
+    padding: 13px 22px;
+    border-top: 1px solid var(--border);
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(104, 216, 244, 0.08);
+}
+
+.rank {
+    width: 37px;
+    height: 37px;
+    display: inline-grid;
+    place-items: center;
+    color: #c1cee0;
+    background: #263951;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.gold {
+    color: #352711;
+    background: linear-gradient(145deg, #ffe89b, #f3b82e);
+}
+
+.silver {
+    color: #28384b;
+    background: linear-gradient(145deg, #f2f6fa, #9cacc1);
+}
+
+.bronze {
+    color: #3a2117;
+    background: linear-gradient(145deg, #ffc39c, #c9784a);
+}
+
+.flag {
+    display: inline-block;
+    width: 38px;
+    margin-right: 12px;
+    font-size: 25px;
+    vertical-align: -3px;
+}
+
+.country-name {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tag {
+    display: inline-block;
+    min-width: 48px;
+    padding: 5px 8px;
+    color: #a9c5db;
+    background: rgba(104, 216, 244, 0.07);
+    border: 1px solid rgba(104, 216, 244, 0.14);
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.hint {
+    margin: 14px 4px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 30px 2px 35px;
+    color: #8495ad;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    .header {
+        gap: 12px;
+        padding-top: 25px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        font-size: 27px;
+    }
+
+    .sticker {
+        padding: 8px 9px;
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 160px;
+        padding: 23px 20px;
+    }
+
+    .mountains {
+        width: 90px;
+        flex-basis: 90px;
+        transform: scale(0.65);
+        transform-origin: center right;
+        margin-left: -45px;
+    }
+
+    .hero-content > p:last-child {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    th {
+        padding: 13px 10px;
+        font-size: 9px;
+    }
+
+    th:first-child {
+        padding-left: 13px;
+    }
+
+    td {
+        padding: 11px 10px;
+    }
+
+    .rank {
+        width: 31px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .flag {
+        width: 27px;
+        margin-right: 6px;
+        font-size: 20px;
+    }
+
+    .country-name {
+        font-size: 12px;
+    }
+
+    .tag {
+        min-width: 35px;
+        padding: 4px;
+        font-size: 9px;
+    }
+
+    .code-column {
+        width: 65px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
